@@ -1,8 +1,8 @@
 require 'spec_helper'
-require 'bill_data_getter'
+require_relative '../lib/services/get_bill_data'
 
-describe BillDataGetter do
+describe GetBillData do
   it 'retrieves a string from an endpoint' do
-    expect(BillDataGetter.call).to be_a String
+    expect(GetBillData.call).to be_a String
   end
 end
