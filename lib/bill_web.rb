@@ -1,5 +1,7 @@
-require 'sinatra'
+require 'sinatra/base'
 
-get '/' do
-  '<h1>hello</h1>'
+class BillWeb < Sinatra::Base
+  get '/' do
+    erb :bill
+  end
 end
