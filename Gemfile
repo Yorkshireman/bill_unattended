@@ -5,6 +5,7 @@ ruby '2.2.0'
 gem 'http'
 gem 'json'
 gem 'sinatra'
+gem 'shotgun'
 
 group :test do
   gem 'guard-rspec', require: false

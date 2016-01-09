@@ -79,6 +79,8 @@ GEM
       rspec-support (~> 3.4.0)
     rspec-support (3.4.1)
     shellany (0.0.1)
+    shotgun (0.9.1)
+      rack (>= 1.0)
     sinatra (1.4.6)
       rack (~> 1.4)
       rack-protection (~> 1.4)
@@ -100,4 +102,5 @@ DEPENDENCIES
   guard-rspec
   http
   json
+  shotgun
   sinatra

@@ -1,4 +1,5 @@
 require 'spec_helper'
+require_relative '../../lib/bill_web.rb'
 
 feature 'Bill Features' do
   context 'when on bill show page' do
