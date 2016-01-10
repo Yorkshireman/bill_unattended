@@ -18,3 +18,20 @@
   <% end %>
 </ul>
 <p>Total: <%= two_decimals(@bill.call_charges_total) %></p>
+
+<h2>Sky Store</h2>
+<h3>Rentals:</h3>
+<ul>
+  <% @bill.sky_store_rentals.each do |rental| %>
+    <li>Title: <%= rental["title"] %> Cost: <%= rental["cost"] %></li>
+  <% end %>
+</ul>
+
+<h3>Buy & Keep:</h3>
+<ul>
+  <% @bill.sky_store_buy_and_keep.each do |purchase| %>
+    <li>Title: <%= purchase["title"] %> Cost: <%= purchase["cost"] %></li>
+  <% end %>
+</ul>
+
+<p>Total: <%= two_decimals(@bill.sky_store_total) %></p>

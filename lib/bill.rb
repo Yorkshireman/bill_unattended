@@ -11,19 +11,25 @@ class Bill
               :subscriptions,
               :subscriptions_total,
               :call_charges,
-              :call_charges_total
+              :call_charges_total,
+              :sky_store_rentals,
+              :sky_store_buy_and_keep,
+              :sky_store_total
 
   def initialize
-    @data =               GetBillData.call
-    @generated_on_date =  data["statement"]["generated"]
-    @due_on_date =        data["statement"]["due"]
-    @from_date =          data["statement"]["period"]["from"]
-    @to_date =            data["statement"]["period"]["to"]
-    @grand_total =        data["total"]
-    @subscriptions =      get_subscriptions
-    @subscriptions_total= data["package"]["total"]
-    @call_charges =       data["callCharges"]["calls"]
-    @call_charges_total = data["callCharges"]["total"]
+    @data =                   GetBillData.call
+    @generated_on_date =      data["statement"]["generated"]
+    @due_on_date =            data["statement"]["due"]
+    @from_date =              data["statement"]["period"]["from"]
+    @to_date =                data["statement"]["period"]["to"]
+    @grand_total =            data["total"]
+    @subscriptions =          get_subscriptions
+    @subscriptions_total=     data["package"]["total"]
+    @call_charges =           data["callCharges"]["calls"]
+    @call_charges_total =     data["callCharges"]["total"]
+    @sky_store_rentals =      data["skyStore"]["rentals"]
+    @sky_store_buy_and_keep = data["skyStore"]["buyAndKeep"]
+    @sky_store_total =        data["skyStore"]["total"]
   end
 
 

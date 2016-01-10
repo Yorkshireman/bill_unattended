@@ -6,7 +6,7 @@ feature 'Bill Features' do
   let(:test_data_hash){ TestDataHash.data }
   include TwoDecimals
 
-  context 'when on bill show page' do
+  context 'when on bill page' do
     before :each do
       allow(GetBillData).to receive(:call).and_return(test_data_hash)
       visit '/'
@@ -70,6 +70,25 @@ feature 'Bill Features' do
     it "has call charges total" do
       call_charges_total = test_data_hash["callCharges"]["total"]
       expect(page).to have_content call_charges_total
+    end
+
+    it "has Sky Store Rentals charges" do
+      expect(page).to have_content "Sky Store"
+      expect(page).to have_content "Rentals:"
+      expect(page).to have_content "50 Shades of Grey"
+      expect(page).to have_content "4.99"
+    end
+
+    it "has Sky Store Buy & Keep titles and charges" do
+      expect(page).to have_content "Buy & Keep:"
+      expect(page).to have_content "That's what she said"
+      expect(page).to have_content "9.99"
+      expect(page).to have_content "Broke back mountain"
+    end
+
+    it "has Sky Store total charge" do
+      sky_store_total_charge = test_data_hash["skyStore"]["total"]
+      expect(page).to have_content sky_store_total_charge
     end
   end
 end

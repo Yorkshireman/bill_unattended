@@ -60,4 +60,19 @@ describe Bill do
     call_charges_total = subject.call_charges_total
     expect(call_charges_total).to eq test_data_hash["callCharges"]["total"]
   end
+
+  it "has Sky Store Rentals array" do
+    sky_store_rentals = subject.sky_store_rentals
+    expect(sky_store_rentals).to eq test_data_hash["skyStore"]["rentals"]
+  end
+
+  it "has Sky Store Buy & Keep array" do
+    sky_store_buy_and_keep = subject.sky_store_buy_and_keep
+    expect(sky_store_buy_and_keep).to eq test_data_hash["skyStore"]["buyAndKeep"]
+  end
+
+  it "has Sky Store total charge" do
+    sky_store_total = subject.sky_store_total
+    expect(sky_store_total).to eq test_data_hash["skyStore"]["total"]
+  end
 end
