@@ -40,4 +40,9 @@ describe Bill do
     grand_total = subject.grand_total
     expect(grand_total).to eq test_data_hash["total"]
   end
+
+  it "has package subscriptions array" do
+    package_subscriptions = subject.subscriptions
+    expect(package_subscriptions).to eq TestDataHash.subscriptions
+  end
 end

@@ -4,3 +4,8 @@
 <p>from: <%= @bill_data.from_date %></p>
 <p>to: <%= @bill_data.to_date %></p>
 <p>Total: <%= @bill_data.grand_total %></p>
+
+<h2>Subscriptions</h2>
+<% @bill_data.subscriptions.each do |subscription| %>
+  <p><%= subscription["name"] %>: <%= subscription["cost"] %></p>
+<% end %>

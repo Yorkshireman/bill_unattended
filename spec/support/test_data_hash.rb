@@ -62,4 +62,12 @@ module TestDataHash
       }
     }
   end
+
+  def self.subscriptions
+    [
+      {"name"=>"Variety with Movies HD", "cost"=>50.0}, 
+      {"name"=>"Sky Talk Anytime", "cost"=>5.0}, 
+      {"name"=>"Fibre Unlimited", "cost"=>16.4}
+    ]
+  end
 end

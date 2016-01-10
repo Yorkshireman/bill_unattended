@@ -35,5 +35,14 @@ feature 'Bill Features' do
       grand_total = test_data_hash["total"]
       expect(page).to have_content grand_total
     end
+
+    it "package subscriptions names and charges" do
+      expect(page).to have_content "Variety with Movies HD"
+      expect(page).to have_content "50.0"
+      expect(page).to have_content "Sky Talk Anytime"
+      expect(page).to have_content "5.0"
+      expect(page).to have_content "Fibre Unlimited"
+      expect(page).to have_content "16.4"
+    end
   end
 end

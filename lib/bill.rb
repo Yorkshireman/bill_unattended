@@ -1,4 +1,5 @@
 require_relative './services/get_bill_data'
+require 'active_support'
 
 class Bill
   attr_reader :data,
@@ -6,7 +7,8 @@ class Bill
               :due_on_date,
               :from_date,
               :to_date,
-              :grand_total
+              :grand_total,
+              :subscriptions
 
   def initialize
     @data =               GetBillData.call
@@ -15,6 +17,7 @@ class Bill
     @from_date =          get_from_date
     @to_date =            get_to_date
     @grand_total =        get_grand_total
+    @subscriptions =      get_subscriptions
   end
 
 
@@ -38,5 +41,11 @@ class Bill
 
   def get_grand_total
     data["total"]
+  end
+
+  def get_subscriptions
+    data["package"]["subscriptions"].map do |item|
+      item.except!("type")
+    end
   end
 end
