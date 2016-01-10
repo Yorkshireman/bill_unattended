@@ -15,7 +15,7 @@ To run locally:
 `git clone git@github.com:Yorkshireman/bill_unattended.git`  
 `bundle install`  
 `rackup`  
-- go to [localhost:9292](localhost:9292) in your browser.  
+- go to [localhost:9292](http://localhost:9292) in your browser.  
 
 ###Testing:  
 To run the tests:  
