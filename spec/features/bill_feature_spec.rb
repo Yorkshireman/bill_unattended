@@ -1,12 +1,23 @@
 require 'spec_helper'
+require_relative '../support/test_data_hash'
 
 feature 'Bill Features' do
+  let(:test_data_hash){ TestDataHash.data }
+
   context 'when on bill show page' do
-    before(:each){ visit '/' }
+    before :each do
+      visit '/'
+      allow_any_instance_of(Bill).to receive(:data).and_return(test_data_hash)
+    end
   
     it 'has a title' do
       expect(current_path).to eq '/'
       expect(page).to have_content 'Your Bill'
+    end
+
+    it "bill's generated on, due on, from and to dates are displayed" do
+      generated_on_date = test_data_hash["statement"]["generated"]
+      expect(page).to have_content generated_on_date
     end
   end
 end
