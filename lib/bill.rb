@@ -1,9 +1,10 @@
 require 'http'
+require_relative './services/get_bill_data'
 
 class Bill
   attr_reader :data
 
   def initialize
-    @data = JSON.parse(HTTP.get("http://safe-plains-5453.herokuapp.com/bill.json"))
+    @data = GetBillData.call
   end
 end

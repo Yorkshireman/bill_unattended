@@ -7,7 +7,7 @@ feature 'Bill Features' do
   context 'when on bill show page' do
     before :each do
       visit '/'
-      allow_any_instance_of(Bill).to receive(:data).and_return(test_data_hash)
+      allow(GetBillData).to receive(:call).and_return(test_data_hash)
     end
   
     it 'has a title' do
