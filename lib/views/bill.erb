@@ -3,9 +3,10 @@
 <p>due on: <%= @bill.due_on_date %></p>
 <p>from: <%= @bill.from_date %></p>
 <p>to: <%= @bill.to_date %></p>
-<p>Total: <%= @bill.grand_total %></p>
+<p>Total: <%= two_decimals(@bill.grand_total) %></p>
 
 <h2>Subscriptions</h2>
 <% @bill.subscriptions.each do |subscription| %>
-  <p><%= subscription["name"] %>: <%= subscription["cost"] %></p>
+  <p><%= subscription["name"] %>: <%= two_decimals(subscription["cost"]) %></p>
 <% end %>
+<p>Total: <%= two_decimals(@bill.subscriptions_total) %></p>

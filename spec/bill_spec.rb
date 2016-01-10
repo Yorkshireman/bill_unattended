@@ -42,7 +42,12 @@ describe Bill do
   end
 
   it "has package subscriptions array" do
-    package_subscriptions = subject.subscriptions
-    expect(package_subscriptions).to eq TestDataHash.subscriptions
+    subscriptions = subject.subscriptions
+    expect(subscriptions).to eq TestDataHash.subscriptions
+  end
+
+  it "has package subscriptions total" do
+    subscriptions_total = subject.subscriptions_total
+    expect(subscriptions_total).to eq test_data_hash["package"]["total"]
   end
 end

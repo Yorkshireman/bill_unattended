@@ -1,8 +1,10 @@
 require 'spec_helper'
 require_relative '../support/test_data_hash'
+require_relative '../support/two_decimals'
 
 feature 'Bill Features' do
   let(:test_data_hash){ TestDataHash.data }
+  include TwoDecimals
 
   context 'when on bill show page' do
     before :each do
@@ -33,16 +35,20 @@ feature 'Bill Features' do
 
     it "grand total is visible" do
       grand_total = test_data_hash["total"]
-      expect(page).to have_content grand_total
+      expect(page).to have_content(two_decimals(grand_total))
     end
 
-    it "package subscriptions names and charges" do
+    it "package subscriptions names and charges are visible" do
       expect(page).to have_content "Variety with Movies HD"
-      expect(page).to have_content "50.0"
+      expect(page).to have_content "50.00"
       expect(page).to have_content "Sky Talk Anytime"
-      expect(page).to have_content "5.0"
+      expect(page).to have_content "5.00"
       expect(page).to have_content "Fibre Unlimited"
-      expect(page).to have_content "16.4"
+      expect(page).to have_content "16.40"
+    end
+
+    it "package subscriptions total is visible" do
+      expect(page).to have_content "71.40"
     end
   end
 end
