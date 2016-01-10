@@ -1,4 +1,4 @@
-module TestJson
+module TestDataHash
   def self.data
     {
       "statement"=>{
