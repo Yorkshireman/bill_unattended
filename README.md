@@ -21,7 +21,7 @@ To run locally:
 To run the tests:  
 `rspec`  
 
-In the tests the http request is stubbed to return (effectively) a copy of that data that resides in the `test_data_hash` module in `/spec/support/`.  
+In the tests the http request is stubbed to return (effectively) a copy of that response and that copy resides in the `test_data_hash` module in `/spec/support/`.  
 
 One test, in `/spec/services/get_bill_data_spec` does make the http request for real and compares the response to `test_data_hash`.  
   
