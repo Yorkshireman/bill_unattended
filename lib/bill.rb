@@ -1,5 +1,5 @@
 require_relative './services/get_bill_data'
-require 'active_support'
+require_relative './services/extract_data'
 
 class Bill
   attr_reader :data,
@@ -16,26 +16,19 @@ class Bill
               :sky_store_buy_and_keep,
               :sky_store_total
 
-  def initialize
-    @data =                   GetBillData.call
-    @generated_on_date =      data["statement"]["generated"]
-    @due_on_date =            data["statement"]["due"]
-    @from_date =              data["statement"]["period"]["from"]
-    @to_date =                data["statement"]["period"]["to"]
-    @grand_total =            data["total"]
-    @subscriptions =          get_subscriptions
-    @subscriptions_total=     data["package"]["total"]
-    @call_charges =           data["callCharges"]["calls"]
-    @call_charges_total =     data["callCharges"]["total"]
-    @sky_store_rentals =      data["skyStore"]["rentals"]
-    @sky_store_buy_and_keep = data["skyStore"]["buyAndKeep"]
-    @sky_store_total =        data["skyStore"]["total"]
-  end
-
-
-  private
-
-  def get_subscriptions
-    data["package"]["subscriptions"].map{ |item| item.except!("type") }
+  def initialize(get_bill_data=GetBillData, extract=ExtractData)
+    @data =                   get_bill_data.call
+    @generated_on_date =      extract.generated_on_date(data)
+    @due_on_date =            extract.due_on_date(data)
+    @from_date =              extract.from_date(data)
+    @to_date =                extract.to_date(data)
+    @grand_total =            extract.grand_total(data)
+    @subscriptions =          extract.subscriptions(data)
+    @subscriptions_total=     extract.subscriptions_total(data)
+    @call_charges =           extract.call_charges(data)
+    @call_charges_total =     extract.call_charges_total(data)
+    @sky_store_rentals =      extract.sky_store_rentals(data)
+    @sky_store_buy_and_keep = extract.sky_store_buy_and_keep(data)
+    @sky_store_total =        extract.sky_store_total(data)
   end
 end

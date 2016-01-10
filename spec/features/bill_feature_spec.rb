@@ -12,7 +12,7 @@ feature 'Bill Features' do
       visit '/'
     end
   
-    it 'has a Bill title' do
+    it 'there is a Bill title' do
       expect(current_path).to eq '/'
       expect(page).to have_content 'Your Bill'
     end
@@ -51,7 +51,7 @@ feature 'Bill Features' do
       expect(page).to have_content "71.40"
     end
 
-    it "has individual call details and charges" do
+    it "individual call details and charges are visible" do
       call_details = test_data_hash["callCharges"]["calls"]
       number =       call_details[0]["called"]
       duration =     call_details[0]["duration"]
@@ -67,26 +67,26 @@ feature 'Bill Features' do
       expect(page).to have_content cost
     end
 
-    it "has call charges total" do
+    it "call charges total is visible" do
       call_charges_total = test_data_hash["callCharges"]["total"]
       expect(page).to have_content call_charges_total
     end
 
-    it "has Sky Store Rentals charges" do
+    it "Sky Store Rentals charges are visible" do
       expect(page).to have_content "Sky Store"
       expect(page).to have_content "Rentals:"
       expect(page).to have_content "50 Shades of Grey"
       expect(page).to have_content "4.99"
     end
 
-    it "has Sky Store Buy & Keep titles and charges" do
+    it "Sky Store Buy & Keep titles and charges are visible" do
       expect(page).to have_content "Buy & Keep:"
       expect(page).to have_content "That's what she said"
       expect(page).to have_content "9.99"
       expect(page).to have_content "Broke back mountain"
     end
 
-    it "has Sky Store total charge" do
+    it "Sky Store total charge is visible" do
       sky_store_total_charge = test_data_hash["skyStore"]["total"]
       expect(page).to have_content sky_store_total_charge
     end
