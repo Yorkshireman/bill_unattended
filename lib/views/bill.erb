@@ -32,12 +32,22 @@
       </div>
     </nav>
 
-    <h1>Your Bill</h1>
-    <p>generated on: <%= @bill.generated_on_date %></p>
-    <p>due on: <%= @bill.due_on_date %></p>
+    <h4>Bill generated on: <%=@bill.generated_on_date %></h4>
+
+    <div class='jumbotron'>
+      <div class='row'>
+        <div class='col-xs-6'>
+          <h4>Total amount due</h4>
+          <p>due on: <%= @bill.due_on_date %></p>
+        </div>
+        <div class='col-xs-6'>
+          <h1 class='pull-right'>£<%= two_decimals(@bill.grand_total) %></h1>
+        </div>
+      </div>
+    </div>
     <p>from: <%= @bill.from_date %></p>
     <p>to: <%= @bill.to_date %></p>
-    <p>Total: <%= two_decimals(@bill.grand_total) %></p>
+
 
     <h2>Subscriptions</h2>
     <% @bill.subscriptions.each do |subscription| %>

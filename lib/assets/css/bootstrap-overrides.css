@@ -1,3 +1,72 @@
+/************************************************************
+  GLOBALS
+************************************************************/
+
 body {
-  background-color: blue;
+  max-width: 767px;
+}
+
+
+
+
+
+/************************************************************
+  NAVBAR
+************************************************************/
+
+.navbar-brand img {
+  width: 70px;
+  position: relative;
+  bottom: 0.65em;
+}
+
+.navbar-header {
+  background-color: white;
+}
+
+
+
+
+
+/************************************************************
+  JUMBOTRON
+************************************************************/
+
+.jumbotron {
+  background-color: #0078AD;
+  color: white;
+}
+
+.jumbotron p {
+  font-size: 1em;
+}
+
+.jumbotron h1 {
+  position: relative;
+  bottom: 0.75em;
+}
+
+
+
+
+
+/************************************************************
+  MEDIA QUERIES
+************************************************************/
+
+@media only screen and (min-width: 768px) {
+  .jumbotron h1 {
+    bottom: 0.2em;
+  }
+
+  .jumbotron h4 {
+    font-size: 2em;
+    position: relative;
+    top: 1em;
+  }
+
+  .jumbotron p {
+    position: relative;
+    top: 1.5em;
+  }
 }

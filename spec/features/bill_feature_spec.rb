@@ -14,7 +14,7 @@ feature 'Bill Features' do
   
     it 'there is a Bill title' do
       expect(current_path).to eq '/'
-      expect(page).to have_content 'Your Bill'
+      expect(page).to have_content 'Bill'
     end
 
     it "'generated on' and 'due on' dates are visible" do
