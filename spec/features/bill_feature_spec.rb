@@ -6,8 +6,8 @@ feature 'Bill Features' do
 
   context 'when on bill show page' do
     before :each do
-      visit '/'
       allow(GetBillData).to receive(:call).and_return(test_data_hash)
+      visit '/'
     end
   
     it 'has a title' do
@@ -18,6 +18,7 @@ feature 'Bill Features' do
     it "bill's generated on, due on, from and to dates are displayed" do
       generated_on_date = test_data_hash["statement"]["generated"]
       expect(page).to have_content generated_on_date
+      
       due_on_date = test_data_hash["statement"]["due"]
       expect(page).to have_content due_on_date
     end
