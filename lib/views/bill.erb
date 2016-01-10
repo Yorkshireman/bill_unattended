@@ -1,37 +1,71 @@
-<h1>Your Bill</h1>
-<p>generated on: <%= @bill.generated_on_date %></p>
-<p>due on: <%= @bill.due_on_date %></p>
-<p>from: <%= @bill.from_date %></p>
-<p>to: <%= @bill.to_date %></p>
-<p>Total: <%= two_decimals(@bill.grand_total) %></p>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<h2>Subscriptions</h2>
-<% @bill.subscriptions.each do |subscription| %>
-  <p><%= subscription["name"] %>: <%= two_decimals(subscription["cost"]) %></p>
-<% end %>
-<p>Total: <%= two_decimals(@bill.subscriptions_total) %></p>
+    <title>Sky Bill</title>
 
-<h2>Call Charges</h2>
-<ul>
-  <% @bill.call_charges.each do |call| %>
-    <li>Called: <%= call["called"] %> Duration: <%= call["duration"] %> Cost: <%= two_decimals(call["cost"]) %></li>
-  <% end %>
-</ul>
-<p>Total: <%= two_decimals(@bill.call_charges_total) %></p>
+    <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
 
-<h2>Sky Store</h2>
-<h3>Rentals:</h3>
-<ul>
-  <% @bill.sky_store_rentals.each do |rental| %>
-    <li>Title: <%= rental["title"] %> Cost: <%= rental["cost"] %></li>
-  <% end %>
-</ul>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 
-<h3>Buy & Keep:</h3>
-<ul>
-  <% @bill.sky_store_buy_and_keep.each do |purchase| %>
-    <li>Title: <%= purchase["title"] %> Cost: <%= purchase["cost"] %></li>
-  <% end %>
-</ul>
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
 
-<p>Total: <%= two_decimals(@bill.sky_store_total) %></p>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+  </head>
+
+  <body class='container'>
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">
+            <img alt="Brand" src="images/sky-logo.png">
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <h1>Your Bill</h1>
+    <p>generated on: <%= @bill.generated_on_date %></p>
+    <p>due on: <%= @bill.due_on_date %></p>
+    <p>from: <%= @bill.from_date %></p>
+    <p>to: <%= @bill.to_date %></p>
+    <p>Total: <%= two_decimals(@bill.grand_total) %></p>
+
+    <h2>Subscriptions</h2>
+    <% @bill.subscriptions.each do |subscription| %>
+      <p><%= subscription["name"] %>: <%= two_decimals(subscription["cost"]) %></p>
+    <% end %>
+    <p>Total: <%= two_decimals(@bill.subscriptions_total) %></p>
+
+    <h2>Call Charges</h2>
+    <ul>
+      <% @bill.call_charges.each do |call| %>
+        <li>Called: <%= call["called"] %> Duration: <%= call["duration"] %> Cost: <%= two_decimals(call["cost"]) %></li>
+      <% end %>
+    </ul>
+    <p>Total: <%= two_decimals(@bill.call_charges_total) %></p>
+
+    <h2>Sky Store</h2>
+    <h3>Rentals:</h3>
+    <ul>
+      <% @bill.sky_store_rentals.each do |rental| %>
+        <li>Title: <%= rental["title"] %> Cost: <%= rental["cost"] %></li>
+      <% end %>
+    </ul>
+
+    <h3>Buy & Keep:</h3>
+    <ul>
+      <% @bill.sky_store_buy_and_keep.each do |purchase| %>
+        <li>Title: <%= purchase["title"] %> Cost: <%= purchase["cost"] %></li>
+      <% end %>
+    </ul>
+
+    <p>Total: <%= two_decimals(@bill.sky_store_total) %></p>
+  </body>
+</html>
