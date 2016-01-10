@@ -1,5 +1,5 @@
 require 'sinatra/base'
-require 'bill'
+require_relative './bill'
 
 class BillWeb < Sinatra::Base
   get '/' do
