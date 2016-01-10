@@ -17,4 +17,4 @@
     <li>Called: <%= call["called"] %> Duration: <%= call["duration"] %> Cost: <%= two_decimals(call["cost"]) %></li>
   <% end %>
 </ul>
-<p>Total: <%= @bill.call_charges_total %></p>
+<p>Total: <%= two_decimals(@bill.call_charges_total) %></p>
