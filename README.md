@@ -1,3 +1,9 @@
+The Specification is shown below the header "Bill unattended test".  
+
+In the tests the http request is stubbed to return (effectively) a copy of that data that resides in the `test_data_hash` module in `/spec/support/`.  
+
+One test, in `/spec/services/get_bill_data_spec` does make the http request for real and compares the response to `test_data_hash`.  
+
 # Bill unattended test
 
 ## Task

@@ -11,20 +11,33 @@ describe Bill do
   end
 
   it 'has a hash of bill data via a http_request' do
-    expect(subject.data).to eq test_data_hash
-    expect(subject.data).to be_a Hash
+    data = subject.data
+    expect(data).to eq test_data_hash
+    expect(data).to be_a Hash
   end
 
   it 'has a generated on date' do
-    result = subject.generated_on_date
-    expect(result).to eq test_data_hash["statement"]["generated"]
+    generated_on_date = subject.generated_on_date
+    expect(generated_on_date).to eq test_data_hash["statement"]["generated"]
   end
 
   it 'has a due date' do
-    result = subject.due_on_date
-    expect(result).to eq test_data_hash["statement"]["due"]
+    due_on_date = subject.due_on_date
+    expect(due_on_date).to eq test_data_hash["statement"]["due"]
   end
 
-  xit 'has from/to period dates'
-  xit 'has a bill total'
+  it 'has a from date' do
+    from_date = subject.from_date
+    expect(from_date).to eq test_data_hash["statement"]["period"]["from"] 
+  end
+
+  it 'has a to date' do
+    to_date = subject.to_date
+    expect(to_date).to eq test_data_hash["statement"]["period"]["to"]
+  end
+
+  it 'has a grand total' do
+    grand_total = subject.grand_total
+    expect(grand_total).to eq test_data_hash["total"]
+  end
 end
