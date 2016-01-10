@@ -1,17 +1,21 @@
 The Specification is shown below the header "Bill unattended test".  
 
-###Technologies and Design Principles:   
-It has been built on Ruby & Sinatra. The CSS is based around Bootstrap.  
-
-The app pulls some json from a url, parses it, and is presented in a view on the root path.  
-
-Separation of concerns and the Single Responsibilty Principle have been kept in mind throughout.  
-
-It was built using TDD throughout. Testing technology was RSpec.  
+The app pulls some json from a url, parses it, and is presented in a view on the root path.    
 
 Deployed online [here](https://bill-unattended.herokuapp.com/) using Heroku.  
 
-To run locally:  
+###Technologies and Design Principles:   
+It has been built on Ruby & Sinatra. Sinatra was chosen for two reasons:  
+1. I had only one day to build this so, given the limited time, I chose Ruby as a language because it is my strongest one at the moment.  
+2. Although Rails is quicker to get everything up and running, it felt a bit heavy-handed for such a small app.  
+
+The CSS is based around Bootstrap. I use Bootstrap for most things and especially given the limited time, it was the natural choice. I really would have liked to have gotten Sass up and running for this but, after some grappling trying to get it compiling, time became too pressing so I gave up.  
+
+Separation of concerns, the Single Responsibilty Principle were kept in mind throughout and, as always, I strove for clean readable code.    
+
+It was built using TDD throughout. Testing technology was RSpec.    
+
+####To run locally:  
 `git clone git@github.com:Yorkshireman/bill_unattended.git`  
 `bundle install`  
 `rackup`  
