@@ -10,3 +10,11 @@
   <p><%= subscription["name"] %>: <%= two_decimals(subscription["cost"]) %></p>
 <% end %>
 <p>Total: <%= two_decimals(@bill.subscriptions_total) %></p>
+
+<h2>Call Charges</h2>
+<ul>
+  <% @bill.call_charges.each do |call| %>
+    <li>Called: <%= call["called"] %> Duration: <%= call["duration"] %> Cost: <%= two_decimals(call["cost"]) %></li>
+  <% end %>
+</ul>
+<p>Total: <%= @bill.call_charges_total %></p>

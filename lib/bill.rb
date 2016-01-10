@@ -9,7 +9,9 @@ class Bill
               :to_date,
               :grand_total,
               :subscriptions,
-              :subscriptions_total
+              :subscriptions_total,
+              :call_charges,
+              :call_charges_total
 
   def initialize
     @data =               GetBillData.call
@@ -20,6 +22,8 @@ class Bill
     @grand_total =        data["total"]
     @subscriptions =      get_subscriptions
     @subscriptions_total= data["package"]["total"]
+    @call_charges =       data["callCharges"]["calls"]
+    @call_charges_total = data["callCharges"]["total"]
   end
 
 

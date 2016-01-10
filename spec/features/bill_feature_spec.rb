@@ -50,5 +50,26 @@ feature 'Bill Features' do
     it "package subscriptions total is visible" do
       expect(page).to have_content "71.40"
     end
+
+    it "has individual call details and charges" do
+      call_details = test_data_hash["callCharges"]["calls"]
+      number =       call_details[0]["called"]
+      duration =     call_details[0]["duration"]
+      cost =         call_details[0]["cost"]
+      
+      expect(page).to have_content "Called:"
+      expect(page).to have_content number
+      
+      expect(page).to have_content "Duration:"
+      expect(page).to have_content duration
+
+      expect(page).to have_content "Cost:"
+      expect(page).to have_content cost
+    end
+
+    it "has call charges total" do
+      call_charges_total = test_data_hash["callCharges"]["total"]
+      expect(page).to have_content call_charges_total
+    end
   end
 end

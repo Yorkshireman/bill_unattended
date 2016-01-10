@@ -50,4 +50,14 @@ describe Bill do
     subscriptions_total = subject.subscriptions_total
     expect(subscriptions_total).to eq test_data_hash["package"]["total"]
   end
+
+  it "has call_charges array" do
+    call_charges = subject.call_charges
+    expect(call_charges).to eq test_data_hash["callCharges"]["calls"]
+  end
+
+  it "has call charges total" do
+    call_charges_total = subject.call_charges_total
+    expect(call_charges_total).to eq test_data_hash["callCharges"]["total"]
+  end
 end
