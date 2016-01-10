@@ -3,7 +3,7 @@ require_relative './bill'
 
 class BillWeb < Sinatra::Base
   get '/' do
-    @bill_data = Bill.new
+    @bill = Bill.new
     erb :bill
   end
 end

@@ -1,11 +1,11 @@
 <h1>Your Bill</h1>
-<p>generated on: <%= @bill_data.generated_on_date %></p>
-<p>due on: <%= @bill_data.due_on_date %></p>
-<p>from: <%= @bill_data.from_date %></p>
-<p>to: <%= @bill_data.to_date %></p>
-<p>Total: <%= @bill_data.grand_total %></p>
+<p>generated on: <%= @bill.generated_on_date %></p>
+<p>due on: <%= @bill.due_on_date %></p>
+<p>from: <%= @bill.from_date %></p>
+<p>to: <%= @bill.to_date %></p>
+<p>Total: <%= @bill.grand_total %></p>
 
 <h2>Subscriptions</h2>
-<% @bill_data.subscriptions.each do |subscription| %>
+<% @bill.subscriptions.each do |subscription| %>
   <p><%= subscription["name"] %>: <%= subscription["cost"] %></p>
 <% end %>
