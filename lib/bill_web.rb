@@ -3,8 +3,7 @@ require 'bill'
 
 class BillWeb < Sinatra::Base
   get '/' do
-    bill = Bill.new
-    @generated_on_date = bill.data["statement"]["generated"]
+    @bill_data = Bill.new
     erb :bill
   end
 end
