@@ -36,8 +36,6 @@ class Bill
   private
 
   def get_subscriptions
-    data["package"]["subscriptions"].map do |item|
-      item.except!("type")
-    end
+    data["package"]["subscriptions"].map{ |item| item.except!("type") }
   end
 end
