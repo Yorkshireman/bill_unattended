@@ -58,7 +58,7 @@
         <% @bill.subscriptions.each do |subscription| %>
           <tr>
             <td><%= subscription["name"] %></td>
-            <td class='subscriptions-billing-period'>
+            <td class='billing-period'>
               <%= @bill.from_date %> - 
               <p><%= @bill.to_date %></p>
             </td>
@@ -111,21 +111,55 @@
 
     <hr>
 
-    <h2>Sky Store</h2>
-    <h3>Rentals:</h3>
-    <ul>
-      <% @bill.sky_store_rentals.each do |rental| %>
-        <li>Title: <%= rental["title"] %> Cost: <%= rental["cost"] %></li>
-      <% end %>
-    </ul>
+    <section class='sky-store-rentals'>
+      <h3 id='sky-store-rentals-header'>Sky Store Rentals</h3>
+      <table class='table'>
+        <tr>
+          <th class='small'>Title</th>
+          <th class='small'>Billing Period</th>
+          <th class='small'>Cost</th>
+        <tr>
+        <% @bill.sky_store_rentals.each do |rental| %>
+          <tr>
+            <td><%= rental["title"] %></td>
+            <td class='billing-period'>
+              <%= @bill.from_date %> - 
+              <p><%= @bill.to_date %></p>
+            </td>
+            <td><%= two_decimals(rental["cost"]) %></td>
+          <tr>
+        <% end %>
+      </table>
+    </section>
 
-    <h3>Buy & Keep:</h3>
-    <ul>
-      <% @bill.sky_store_buy_and_keep.each do |purchase| %>
-        <li>Title: <%= purchase["title"] %> Cost: <%= purchase["cost"] %></li>
-      <% end %>
-    </ul>
-
-    <p>Total: <%= two_decimals(@bill.sky_store_total) %></p>
+    <section class='sky-store-buy-and-keep'>
+      <h3 id='sky-store-buy-and-keep-header'>Sky Store Buy & Keep</h3>
+      <table class='table'>
+        <tr>
+          <th class='small'>Title</th>
+          <th class='small'>Billing Period</th>
+          <th class='small'>Cost</th>
+        <tr>
+        <% @bill.sky_store_buy_and_keep.each do |purchase| %>
+          <tr>
+            <td><%= purchase["title"] %></td>
+            <td class='billing-period'>
+              <%= @bill.from_date %> - 
+              <p><%= @bill.to_date %></p>
+            </td>
+            <td><%= two_decimals(purchase["cost"]) %></td>
+          <tr>
+        <% end %>
+        <tr id='sky-store-total'>
+          <td>
+            <h4>Sky Store total:</h4>
+          </td>
+          <td></td>
+          <td>
+            <h4><%= two_decimals(@bill.sky_store_total) %></h4>
+          </td>
+        <tr>
+      </table>
+    </section>
   </body>
 </html>

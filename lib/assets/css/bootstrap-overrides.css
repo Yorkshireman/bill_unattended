@@ -4,6 +4,7 @@
 
 body {
   max-width: 767px;
+  padding-bottom: 1em;
 }
 
 
@@ -120,6 +121,64 @@ nav p {
 
 
 /************************************************************
+  SKY STORE
+************************************************************/
+
+#sky-store-total {
+  color: #0078AD;
+  background-color: #F4F4F4;
+}
+
+#sky-store-total td {
+  padding-top: 2px;
+  padding-bottom: 2px;
+}
+
+.sky-store-buy-and-keep th:last-child {
+  text-align: right;
+  position: relative;
+  right: 27px;
+}
+
+.sky-store-buy-and-keep td:last-child {
+  text-align: right;
+  position: relative;
+  right: 27px;
+}
+
+
+
+
+
+/************************************************************
+  SKY STORE RENTALS
+************************************************************/
+
+#sky-store-rentals-header {
+  background-color: #F4F4F4;
+  padding: 0.3em 0.4em;
+  color: #383838;
+}
+
+
+
+
+
+/************************************************************
+  SKY STORE BUY & KEEP
+************************************************************/
+
+#sky-store-buy-and-keep-header {
+  background-color: #F4F4F4;
+  padding: 0.3em 0.4em;
+  color: #383838;
+}
+
+
+
+
+
+/************************************************************
   MISC
 ************************************************************/
 
@@ -136,7 +195,7 @@ nav p {
 ************************************************************/
 
 @media only screen and (min-width: 590px) {
-  .subscriptions-billing-period p {
+  .billing-period p {
     display: inline;
   }
 
@@ -159,5 +218,17 @@ nav p {
   .jumbotron p {
     position: relative;
     top: 1.5em;
+  }
+
+  .sky-store-buy-and-keep th:last-child {
+    text-align: right;
+    position: relative;
+    right: 45px;
+  }
+
+  .sky-store-buy-and-keep td:last-child {
+    text-align: right;
+    position: relative;
+    right: 45px;
   }
 }
