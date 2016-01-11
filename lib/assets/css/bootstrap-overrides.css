@@ -14,14 +14,14 @@ body {
   NAVBAR
 ************************************************************/
 
+nav .container-fluid {
+  background-color: white;
+}
+
 .navbar-brand img {
   width: 70px;
   position: relative;
   bottom: 0.65em;
-}
-
-.navbar-header {
-  background-color: white;
 }
 
 nav p {
