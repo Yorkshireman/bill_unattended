@@ -9,11 +9,13 @@ It has been built on Ruby & Sinatra. Sinatra was chosen for two reasons:
 1. I had only one day to build this so, given the limited time, I chose Ruby as a language because it is my strongest one at the moment.  
 2. Although Rails is quicker to get everything up and running, it felt a bit heavy-handed for such a small app.  
 
+As always, the SOLID principles were kept in mind throughout and I strove for clean readable code.  
+
+It was built using TDD throughout. Testing technology was RSpec.  
+
 The CSS is based around Bootstrap. I use Bootstrap for most things and, especially given the limited time, it was the natural choice. I really would have liked to have gotten Sass up and running for this but, after some grappling trying to get it compiling, time became too pressing so I gave up.  
 
-As always, the SOLID principles were kept in mind throughout and I strove for clean readable code.    
-
-It was built using TDD throughout. Testing technology was RSpec.    
+I used a mobile-first approach for the layout and css; I designed everything on a narrow viewport and then scaled-up using min-width media queries.  
 
 ####To run locally:  
 `git clone git@github.com:Yorkshireman/bill_unattended.git`  
