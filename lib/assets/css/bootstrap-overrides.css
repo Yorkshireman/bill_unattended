@@ -24,6 +24,13 @@ body {
   background-color: white;
 }
 
+nav p {
+  color: #0078AD;
+  position: absolute;
+  right: 5px;
+  bottom: -2px;
+}
+
 
 
 
@@ -51,8 +58,49 @@ body {
 
 
 /************************************************************
+  SUBSCRIPTIONS
+************************************************************/
+
+#subscriptions-header {
+  background-color: #F4F4F4;
+  padding: 0.3em 0.4em;
+}
+
+#subscriptions-total {
+  color: #0078AD;
+  background-color: #F4F4F4;
+}
+
+#subscriptions-total td {
+  padding-top: 2px;
+  padding-bottom: 2px;
+}
+
+
+
+
+
+/************************************************************
+  MISC
+************************************************************/
+
+#generated-on {
+  color: #0078AD;
+}
+
+
+
+
+
+/************************************************************
   MEDIA QUERIES
 ************************************************************/
+
+@media only screen and (min-width: 480px) {
+  .subscriptions-billing-period p {
+    display: inline;
+  }
+}
 
 @media only screen and (min-width: 768px) {
   .jumbotron h1 {

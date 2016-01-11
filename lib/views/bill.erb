@@ -29,10 +29,10 @@
             <img alt="Brand" src="images/sky-logo.png">
           </a>
         </div>
+        <p class='pull-right'>Date: <%=@bill.generated_on_date %></p>
       </div>
     </nav>
 
-    <h4>Bill generated on: <%=@bill.generated_on_date %></h4>
 
     <div class='jumbotron'>
       <div class='row'>
@@ -45,15 +45,34 @@
         </div>
       </div>
     </div>
-    <p>from: <%= @bill.from_date %></p>
-    <p>to: <%= @bill.to_date %></p>
 
-
-    <h2>Subscriptions</h2>
-    <% @bill.subscriptions.each do |subscription| %>
-      <p><%= subscription["name"] %>: <%= two_decimals(subscription["cost"]) %></p>
-    <% end %>
-    <p>Total: <%= two_decimals(@bill.subscriptions_total) %></p>
+    <section class='subscriptions'>
+      <h3 id='subscriptions-header'>Subscriptions</h3>
+      <table class='table'>
+        <tr>
+          <th class='small'>Package</th>
+          <th class='small'>Billing Period</th>
+          <th class='small'>Cost</th>
+        <tr>
+        <% @bill.subscriptions.each do |subscription| %>
+          <tr>
+            <td><%= subscription["name"] %></td>
+            <td class='subscriptions-billing-period'>
+              <%= @bill.from_date %> - 
+              <p><%= @bill.to_date %></p>
+            </td>
+            <td><%= two_decimals(subscription["cost"]) %></td>
+          <tr>
+        <% end %>
+        <tr id='subscriptions-total'>
+          <td><h4>Subscriptions total:</h4></td>
+          <td></td>
+          <td>
+            <h4><%= two_decimals(@bill.subscriptions_total) %></h4>
+          </td>
+        <tr>
+      </table>
+    </section>
 
     <h2>Call Charges</h2>
     <ul>
