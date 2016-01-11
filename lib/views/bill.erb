@@ -19,6 +19,8 @@
 
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+    <script src="js/showHideCalls.js"></script>
   </head>
 
   <body class='container'>
@@ -65,7 +67,9 @@
           <tr>
         <% end %>
         <tr id='subscriptions-total'>
-          <td><h4>Subscriptions total:</h4></td>
+          <td>
+            <h4>Subscriptions total:</h4>
+          </td>
           <td></td>
           <td>
             <h4><%= two_decimals(@bill.subscriptions_total) %></h4>
@@ -75,8 +79,11 @@
     </section>
 
     <section class='calls'>
-      <h3 id='calls-header'>Calls</h3>
-      <table class='table'>
+      <h3 id='calls-header'>
+        Calls
+        <a href="#" class="show_hide pull-right">+ see breakdown</a>
+      </h3>
+      <table class='table slidingDiv'>
         <tr>
           <th class='small'>Number</th>
           <th class='small'>Duration</th>
@@ -89,8 +96,12 @@
             <td><%= two_decimals(call["cost"]) %></td>
           <tr>
         <% end %>
+      </table>
+      <table class='table'>
         <tr id='calls-total'>
-          <td><h4>Calls total:</h4></td>
+          <td>
+            <h4>Calls total:</h4>
+          </td>
           <td></td>
           <td>
             <h4><%= two_decimals(@bill.call_charges_total) %></h4>

@@ -91,6 +91,30 @@ nav p {
   color: #383838; 
 }
 
+#calls-total {
+  color: #0078AD;
+  background-color: #F4F4F4;
+}
+
+#calls-total td {
+  padding-top: 2px;
+  padding-bottom: 2px;
+}
+
+#calls-total td:last-child h4 {
+  position: relative;
+  left: 50%;
+}
+
+.show_hide {
+  font-size: 0.7em;
+  padding-top: 0.2em;
+}
+
+.show_hide:hover {
+  text-decoration: none;
+}
+
 
 
 
@@ -111,9 +135,13 @@ nav p {
   MEDIA QUERIES
 ************************************************************/
 
-@media only screen and (min-width: 480px) {
+@media only screen and (min-width: 590px) {
   .subscriptions-billing-period p {
     display: inline;
+  }
+
+  #calls-total td:last-child h4 {
+    left: 59%;
   }
 }
 
