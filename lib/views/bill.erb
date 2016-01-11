@@ -74,13 +74,30 @@
       </table>
     </section>
 
-    <h2>Call Charges</h2>
-    <ul>
-      <% @bill.call_charges.each do |call| %>
-        <li>Called: <%= call["called"] %> Duration: <%= call["duration"] %> Cost: <%= two_decimals(call["cost"]) %></li>
-      <% end %>
-    </ul>
-    <p>Total: <%= two_decimals(@bill.call_charges_total) %></p>
+    <section class='calls'>
+      <h3 id='calls-header'>Calls</h3>
+      <table class='table'>
+        <tr>
+          <th class='small'>Number</th>
+          <th class='small'>Duration</th>
+          <th class='small'>Cost</th>
+        <tr>
+        <% @bill.call_charges.each do |call| %>
+          <tr>
+            <td>Called <%= call["called"] %></td>
+            <td><%= call["duration"] %></td>
+            <td><%= two_decimals(call["cost"]) %></td>
+          <tr>
+        <% end %>
+        <tr id='calls-total'>
+          <td><h4>Calls total:</h4></td>
+          <td></td>
+          <td>
+            <h4><%= two_decimals(@bill.call_charges_total) %></h4>
+          </td>
+        <tr>
+      </table>
+    </section>
 
     <h2>Sky Store</h2>
     <h3>Rentals:</h3>
