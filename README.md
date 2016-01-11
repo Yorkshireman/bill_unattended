@@ -9,9 +9,9 @@ It has been built on Ruby & Sinatra. Sinatra was chosen for two reasons:
 1. I had only one day to build this so, given the limited time, I chose Ruby as a language because it is my strongest one at the moment.  
 2. Although Rails is quicker to get everything up and running, it felt a bit heavy-handed for such a small app.  
 
-The CSS is based around Bootstrap. I use Bootstrap for most things and especially given the limited time, it was the natural choice. I really would have liked to have gotten Sass up and running for this but, after some grappling trying to get it compiling, time became too pressing so I gave up.  
+The CSS is based around Bootstrap. I use Bootstrap for most things and, especially given the limited time, it was the natural choice. I really would have liked to have gotten Sass up and running for this but, after some grappling trying to get it compiling, time became too pressing so I gave up.  
 
-Separation of concerns, the Single Responsibilty Principle were kept in mind throughout and, as always, I strove for clean readable code.    
+As always, the SOLID principles were kept in mind throughout and I strove for clean readable code.    
 
 It was built using TDD throughout. Testing technology was RSpec.    
 
