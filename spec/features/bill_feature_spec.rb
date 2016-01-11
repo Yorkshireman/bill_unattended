@@ -57,13 +57,13 @@ feature 'Bill Features' do
       duration =     call_details[0]["duration"]
       cost =         call_details[0]["cost"]
       
-      expect(page).to have_content "Called:"
+      expect(page).to have_content "Called"
       expect(page).to have_content number
       
-      expect(page).to have_content "Duration:"
+      expect(page).to have_content "Duration"
       expect(page).to have_content duration
 
-      expect(page).to have_content "Cost:"
+      expect(page).to have_content "Cost"
       expect(page).to have_content cost
     end
 
@@ -73,14 +73,13 @@ feature 'Bill Features' do
     end
 
     it "Sky Store Rentals charges are visible" do
-      expect(page).to have_content "Sky Store"
-      expect(page).to have_content "Rentals:"
+      expect(page).to have_content "Sky Store Rentals"
       expect(page).to have_content "50 Shades of Grey"
       expect(page).to have_content "4.99"
     end
 
     it "Sky Store Buy & Keep titles and charges are visible" do
-      expect(page).to have_content "Buy & Keep:"
+      expect(page).to have_content "Sky Store Buy & Keep"
       expect(page).to have_content "That's what she said"
       expect(page).to have_content "9.99"
       expect(page).to have_content "Broke back mountain"
