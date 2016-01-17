@@ -72,6 +72,15 @@ feature 'Bill Features' do
       expect(page).to have_content call_charges_total
     end
 
+    it "individual call charges are not visible", js: true do
+      first_call_charge_number =    test_data_hash["callCharges"]["calls"][0]["called"]
+      first_call_charge_duration =  test_data_hash["callCharges"]["calls"][0]["duration"]
+      first_call_charge_cost =      test_data_hash["callCharges"]["calls"][0]["cost"]
+      expect(page).to_not have_content(first_call_charge_number)
+      expect(page).to_not have_content(first_call_charge_duration)
+      expect(page).to_not have_content(first_call_charge_cost)
+    end
+
     it "Sky Store Rentals charges are visible" do
       expect(page).to have_content "Sky Store Rentals"
       expect(page).to have_content "50 Shades of Grey"

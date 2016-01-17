@@ -1,7 +1,7 @@
 require File.join(File.dirname(__FILE__), '..', 'lib/bill_web.rb')
 require 'capybara/rspec'
 
-Capybara.app = BillWeb
+Capybara.app = BillWeb.new
 
 RSpec.configure do |config|
   config.include Capybara::DSL

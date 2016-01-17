@@ -10,4 +10,6 @@ gem 'activesupport'
 group :test do
   gem 'guard-rspec', require: false
   gem 'capybara'
+  gem 'launchy'
+  gem 'capybara-webkit'
 end
