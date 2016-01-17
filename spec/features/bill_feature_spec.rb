@@ -72,7 +72,7 @@ feature 'Bill Features' do
       expect(page).to have_content call_charges_total
     end
 
-    it "individual call charges are not visible", js: true do
+    it "individual call charges are not visible" do
       first_call_charge_number =    test_data_hash["callCharges"]["calls"][0]["called"]
       first_call_charge_duration =  test_data_hash["callCharges"]["calls"][0]["duration"]
       first_call_charge_cost =      test_data_hash["callCharges"]["calls"][0]["cost"]

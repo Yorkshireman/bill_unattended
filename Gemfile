@@ -12,4 +12,6 @@ group :test do
   gem 'capybara'
   gem 'launchy'
   gem 'capybara-webkit'
+  gem 'headless'
+  gem 'selenium-webdriver'
 end
