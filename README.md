@@ -4,7 +4,7 @@ The app pulls some json from a url, parses it, and is presented in a view on the
 
 Deployed online [here](https://bill-unattended.herokuapp.com/) using Heroku.  
 
-###Technologies and Design Principles:   
+### Technologies and Design Principles:   
 It has been built on Ruby & Sinatra. Sinatra was chosen for two reasons:  
 1. I had only one day to build this so, given the limited time, I chose Ruby as a language because it is my strongest one at the moment.  
 2. Although Rails is quicker to get everything up and running, it felt a bit heavy-handed for such a small app.  
@@ -17,13 +17,13 @@ The CSS is based around Bootstrap. I use Bootstrap for most things and, especial
 
 I used a mobile-first approach for the layout and css; I designed everything on a narrow viewport and then scaled-up using min-width media queries.  
 
-####To run locally:  
+#### To run locally:  
 `git clone git@github.com:Yorkshireman/bill_unattended.git`  
 `bundle install`  
 `rackup`  
 - go to [localhost:9292](http://localhost:9292) in your browser.  
 
-###Testing:  
+### Testing:  
 To run the tests:  
 `rspec`  
 
